@@ -1,7 +1,6 @@
 package net.simonvt.widget;
 
 import net.simonvt.menudrawer.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -9,7 +8,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -323,11 +321,12 @@ public class MenuDrawer extends ViewGroup {
         mContentView.setBackgroundDrawable(contentBackground);
         addView(mContentView);
 
-        mContentDropShadow = new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, new int[] {
-                0xFF000000,
-                0x00000000,
-        });
-        mDropShadowWidth = (int) (6 * getResources().getDisplayMetrics().density + 0.5f);
+//        mContentDropShadow = new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, new int[] {
+//                0xFF000000,
+//                0x00000000,
+//        });
+        mContentDropShadow = getResources().getDrawable(R.drawable.left_drop_shadow);
+        mDropShadowWidth = (int) (12 * getResources().getDisplayMetrics().density + 0.5f);
 
         mMenuOverlay = new ColorDrawable(0xFF000000);
 
